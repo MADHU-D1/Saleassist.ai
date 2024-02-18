@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { Route, Routes } from "react-router-dom";
+import Header from "./Components/Header/Header";
+import MenClothing from "./pages/MenClothing/MenClothing";
+import Women from "./pages/Women/Women";
+import Electronics from "./pages/Electronics/Electronics";
+import Gifting from "./pages/Gifting/Gifting";
+import Jewelery from "./pages/Jewelery/Jewelery";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header/>
+
+      <Routes>
+        <Route path="/" element={<MenClothing/>} />
+        <Route path="/women" element={<Women/>} />
+        <Route path="/electronics" element={<Electronics/>} />
+        <Route path="/gifting" element={<Gifting/>} />
+        <Route path="/jewelery" element={<Jewelery/>} />
+      </Routes>
     </div>
   );
 }
